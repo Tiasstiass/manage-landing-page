@@ -25,7 +25,7 @@ Had fun coding it!
 
 Here is a live [demo]
 
-[demo]:
+[demo]: https://manage-tiass.netlify.app/
 
 ## Bug
 

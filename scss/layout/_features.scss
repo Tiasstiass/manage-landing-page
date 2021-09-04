@@ -1,0 +1,79 @@
+@use '../abstracts/' as *;
+
+.features {
+  margin-bottom: 4rem;
+
+  &__showcase {
+    max-width: 90%;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  &__name {
+    @include flex(flex-start);
+    margin: 0 auto 1rem 1rem;
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    border-radius: 50px 0 0 50px;
+    background: $very-pale-red;
+  }
+
+  &__number {
+    margin-right: 1rem;
+    padding: 0.7rem 1.6rem;
+    font-size: 0.9rem;
+    @include border-round;
+    color: #fff;
+    background: $bright-red;
+  }
+
+  &__description {
+    max-width: 90%;
+    margin: 0 auto 3rem 1rem;
+  }
+}
+
+@include breakpoint(laptop) {
+  .features {
+    @include flex(space-between, flex-start);
+    max-width: 80%;
+    margin: 0 auto 7rem;
+
+    &__showcase {
+      width: 50%;
+      margin-left: 0;
+      text-align: start;
+    }
+
+    &__title {
+      max-width: 20ch;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    &__text {
+      max-width: 35ch;
+    }
+
+    &__list {
+      width: 50%;
+    }
+
+    &__name {
+      background: unset;
+    }
+
+    &__number {
+      margin-right: 2rem;
+    }
+
+    &__description {
+      margin-left: 7.5rem;
+      font-size: 1rem;
+    }
+  }
+}

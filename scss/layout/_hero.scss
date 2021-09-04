@@ -1,0 +1,49 @@
+@use '../abstracts' as *;
+
+.hero {
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto 6rem auto;
+
+  &__illustration {
+    width: clamp(15rem, 90vw, 35rem);
+  }
+
+  .showcase {
+    &__title {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+
+    &__text {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: $dark-grayish-blue;
+    }
+  }
+}
+
+@include breakpoint(laptop) {
+  .hero {
+    @include flex(space-between, center, row-reverse);
+    max-width: 80%;
+    margin-top: 7rem;
+    text-align: start;
+
+    &__illustration {
+      width: 50%;
+    }
+    .showcase {
+      max-width: 50%;
+
+      &__title {
+        margin-bottom: 2rem;
+        font-size: 3.5rem;
+      }
+
+      &__text {
+        max-width: 35ch;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+.highlight {
+  padding: 6rem 1.5rem;
+  text-align: center;
+  background: url('../../images/bg-simplify-section-mobile.svg') left bottom
+      30px no-repeat,
+    $bright-red;
+  background-size: 90px;
+
+  &__title {
+    max-width: 20ch;
+    margin: 0 auto 2rem;
+    font-size: 2.5rem;
+    color: #fff;
+  }
+}
+
+@include breakpoint(laptop) {
+  .highlight {
+    @include flex(space-between);
+    padding: 4rem 9rem;
+    text-align: start;
+    background: url('../../images/bg-simplify-section-desktop.svg') left 250px
+        bottom no-repeat,
+      $bright-red;
+
+    &__title {
+      margin: 0;
+    }
+  }
+}

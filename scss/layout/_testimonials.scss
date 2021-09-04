@@ -1,0 +1,116 @@
+@use '../abstracts/' as *;
+
+.testimonials {
+  margin-bottom: 3rem;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 5rem;
+    font-size: 2rem;
+  }
+
+  &__carousel-wrapper {
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  &__carousel {
+    @include flex(center, flex-start);
+
+    .carousel__item {
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      min-height: 14rem;
+      margin: auto;
+      padding: 2rem 1rem;
+      z-index: 10;
+      background: $very-light-gray;
+      transition: all 400ms linear;
+
+      &.active {
+        position: relative;
+        opacity: 1;
+        z-index: 15;
+      }
+    }
+
+    .carousel__photo {
+      width: 4.5rem;
+      position: absolute;
+      top: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .carousel__name {
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .carousel__text {
+      font-size: 1rem;
+    }
+  }
+
+  .fa-circle {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    @include border-round;
+    font-size: 0.5rem;
+    color: $bright-red;
+
+    &.active {
+      background-color: $bright-red;
+    }
+  }
+}
+
+@include breakpoint(laptop) {
+  .testimonials {
+    margin-bottom: 11rem;
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__carousel-wrapper {
+      all: unset;
+      overflow-y: visible;
+    }
+
+    &__carousel {
+      @include flex(flex-start, flex-start);
+      margin-bottom: 3rem;
+      padding-top: 2.5rem;
+      gap: 2rem;
+      scroll-behavior: smooth;
+      overflow-x: scroll;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+
+      .carousel__item {
+        all: unset;
+        flex: 0 0 auto;
+        position: relative;
+        min-height: 10rem;
+        max-width: 30rem;
+        padding: 2rem;
+        background: $very-light-gray;
+      }
+
+      .carousel__photo {
+        position: absolute;
+        width: 4.5rem;
+      }
+    }
+
+    .carousel__btn {
+      margin: 3rem 0;
+    }
+    .fa-circle {
+      display: none;
+    }
+  }
+}

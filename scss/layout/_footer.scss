@@ -1,0 +1,108 @@
+@use '../abstracts/' as *;
+
+.footer {
+  padding: 2.5rem 0.5rem;
+  text-align: center;
+  background: $very-dark-blue;
+
+  &__input {
+    width: 60%;
+    max-width: 20rem;
+    margin-right: 0.2rem;
+    padding: 0.75rem 0rem 0.75rem 1rem;
+    outline: none;
+    border: none;
+    @include border-round;
+    font-size: 0.9rem;
+  }
+
+  &__btn {
+    font-size: 0.8rem;
+    box-shadow: none;
+  }
+
+  &__links {
+    @include flex(center, flex-start);
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: $dark-grayish-blue;
+
+    ul:first-of-type {
+      margin-right: 7rem;
+    }
+  }
+
+  &__socials {
+    &--icon {
+      width: 2.5rem;
+      margin-bottom: 3rem;
+      cursor: pointer;
+
+      & > path:hover {
+        fill: $bright-red;
+      }
+    }
+
+    & > a:not(:last-of-type) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__logos > svg > g > path {
+    fill: #fff;
+  }
+
+  &__credit {
+    margin-top: 2.5rem;
+    font-size: 0.7rem;
+  }
+}
+
+@include breakpoint(desktop) {
+  .footer {
+    @include flex(space-between, flex-start, row-reverse);
+    position: relative;
+    padding: 4rem 9rem;
+
+    &__logos {
+      @include flex(center, center, column-reverse);
+    }
+
+    &__socials {
+      &--icon {
+        width: 1.25rem;
+        margin-bottom: 0;
+      }
+      & > a:not(:last-of-type) {
+        margin-right: 0.5rem;
+      }
+    }
+
+    &__logo {
+      margin-bottom: 5rem;
+    }
+
+    &__links {
+      margin: 0 3rem;
+
+      ul:first-of-type {
+        margin-right: 14rem;
+      }
+    }
+
+    &__input {
+      width: 12.5rem;
+    }
+
+    &__btn {
+      font-size: 0.7rem;
+    }
+
+    &__credit {
+      position: absolute;
+      top: 8rem;
+      right: 9rem;
+      font-size: 0.8rem;
+    }
+  }
+}

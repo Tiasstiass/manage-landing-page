@@ -1,0 +1,83 @@
+@use '../abstracts/'as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: $dark-blue;
+  color: #fff;
+}
+
+html,
+body {
+  width: 100%;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Be Vietnam', sans-serif;
+  background: url('../../images/bg-tablet-pattern.svg') right -8.5rem top -130px,
+    url('../../images/bg-tablet-pattern.svg') right -11rem top 32rem;
+  background-size: 450px, 300px;
+  background-repeat: no-repeat;
+
+  @include breakpoint(laptop) {
+    background-size: 800px, 800px;
+    background-position: right -9rem top -9rem, top 72rem left -30rem;
+  }
+}
+
+main {
+  height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: $dark-blue;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $dark-grayish-blue;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  line-height: 2.3;
+  font-size: 0.9rem;
+
+  li:hover {
+    color: $bright-red;
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  min-height: 100%;
+  width: 100%;
+  z-index: 20;
+  background: linear-gradient(to top, rgb(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+}

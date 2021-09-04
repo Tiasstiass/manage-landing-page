@@ -1,0 +1,22 @@
+@mixin flex($jc: center, $ai: center, $dir: row) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin border-round($base: 50px) {
+  border-radius: $base;
+}
+
+@mixin breakpoint($point) {
+  @if $point == 'laptop' {
+    @media screen and (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == 'desktop' {
+    @media screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+} ;

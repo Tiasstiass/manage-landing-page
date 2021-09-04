@@ -3,8 +3,8 @@
 const hamburgerMenu = document.querySelector('#js-hamburger');
 const hamburgerItems = document.querySelector('#js-hamburger-items');
 const overlay = document.querySelector('#js-overlay');
-const carouselItems = document.querySelectorAll('#js-carousel-items');
-const carouselNav = document.querySelectorAll('#js-carousel-nav');
+const carouselItems = document.querySelectorAll('.carousel__item');
+const carouselNav = document.querySelectorAll('.carousel__nav');
 let touchstartX = 0;
 let touchendX = 0;
 
